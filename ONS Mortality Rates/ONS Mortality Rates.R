@@ -55,6 +55,22 @@ ons_mortality_change_df <- ons_deaths_mortality_df %>%
                values_to = "change") %>%
   drop_na()
 
+# We could also use a past 5-year average
+ons_5yravg_change_df <- ons_deaths_mortality_df %>%
+  arrange(year) %>%
+  rename(crude = crude_mortality_rate_per100000,
+         agest = age_standardised_mortality_rate_per100000) %>%
+  mutate(crude_change = crude - (lag(crude,1) + lag(crude,2) +
+                        lag(crude,3) + lag(crude,4) + lag(crude,5))/5,
+         agest_change = agest - (lag(agest,1) + lag(agest,2) +
+                        lag(agest,3) + lag(agest,4) + lag(agest,5))/5) %>%
+  filter(year >= 1900) %>%
+  select(year, crude_change, agest_change) %>%
+  pivot_longer(cols = 2:3,
+               names_to = "measures",
+               values_to = "change") %>%
+  drop_na()
+
 ## Making the graphs
 # This is the first half of the first graph
 ons_mortality_gg1 <- ons_deathregs_df %>%
@@ -121,6 +137,23 @@ ons_mortality_change_gg <- ons_mortality_change_df %>%
   scale_y_continuous(expand = c(0,0)) +
   labs(title = "2020 saw the biggest increase in age-standardised mortality since 1951.",
        subtitle = "Annual changes in mortality rates (death registrations per 100,000 people) in England and Wales.",
+       x = "Year",
+       y = "",
+       caption = "Author's calculations. Source: Office for National Statistics, 1899 to 2020 (provisional).") +
+  scale_colour_manual(values = c("#008080", "#800000"),
+                      name = "Mortality rates",
+                      labels = c("Age-standardised", "Crude"))
+
+ons_5yravg_change_gg <- ons_5yravg_change_df %>%
+  ggplot(aes(x = year,
+             y = change,
+             group = measures)) +
+  geom_line(aes(color = measures),
+            size = 1.5) +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  labs(title = str_wrap("2020 saw the biggest increase in age-standardised mortality against the past five-year average since 1951."),
+       subtitle = "Changes in mortality rates versus the average of the past five years: (death registrations per 100,000 people) in England and Wales.",
        x = "Year",
        y = "",
        caption = "Author's calculations. Source: Office for National Statistics, 1899 to 2020 (provisional).") +
