@@ -135,12 +135,13 @@ ons_deaths_agest_ggp <- ons_deaths_agest_gg1 +
 ons_agest_dots_gg <- ons_deaths_df %>%
   select(year, agest_rel) %>%
   drop_na() %>%
-  ggplot(aes(x = agest_rel,
+  ggplot(aes(x = floor(agest_rel),
              fill = year != 2020,
              slab_colour = year != 2020)) +
   stat_dotsinterval(aes(point_alpha = year != 2020),
                     point_interval = mean_qi,
-                    normalize = TRUE) +
+                    normalize = TRUE,
+                    binwidth = 1) +
   scale_point_alpha_discrete(range = c(0,1)) +
   scale_colour_manual(aesthetics = c("fill", "slab_colour"),
                       values = c("#FCAB10", "#800000")) +
@@ -165,3 +166,12 @@ ons_agest_dots_gg <- ons_deaths_df %>%
            curvature = 0.4,
            arrow = arrow(length = unit(2, "mm")),
            color = "#FCAB10")
+
+# An issue with the above graph is the misaligned bins
+ons_deaths_df %>%
+  select(year, agest_rel) %>%
+  drop_na() %>%
+  ggplot(aes(x = agest_rel,
+             fill = year!= 2020)) +
+  geom_histogram(binwidth = 1,
+                 boundary = 0)
