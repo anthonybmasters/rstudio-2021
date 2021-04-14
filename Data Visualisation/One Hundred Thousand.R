@@ -4,7 +4,7 @@ library(tidyverse)
 library(patchwork)
 
 # Next, I set the plotting theme
-theme_clean3 <- theme_clean2 <- theme_bw(base_family="Gill Sans Nova") + 
+theme_clean3 <- theme_bw(base_family="Gill Sans Nova") + 
   theme(legend.position = "top",
         legend.title = element_text(size = 16),
         legend.text = element_text(size = 16),
@@ -17,7 +17,7 @@ theme_clean3 <- theme_clean2 <- theme_bw(base_family="Gill Sans Nova") +
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.border = element_blank())
-theme_set(theme_clean2)
+theme_set(theme_clean3)
 
 ## Create the graphs
 # I produce a grid of 10,000 dots
