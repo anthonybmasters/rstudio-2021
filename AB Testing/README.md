@@ -10,5 +10,4 @@ I use the following R packages:
 ## R Markdown
 There is an R Markdown page to view:
 - A/B Testing, 9th June 2021: https://rpubs.com/anthonybmasters/ab-testing
-This code builds on earlier work:
 - Bayesian A/B Test, 12th September 2020: https://rpubs.com/anthonybmasters/bayesian-ab-test
