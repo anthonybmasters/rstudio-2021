@@ -1,6 +1,6 @@
 ## Purpose
 The purpose of this R code is create miscellaneous data visualisations.
-The first project relates to the odds of one in 10,000 and one in 100,000. The second project was simulating UK pub industry losses in terms of beer pints per adult (with distributional assumptions).
+The first project relates to the odds of one in 10,000 and one in 100,000. The second project was simulating UK pub industry losses in terms of beer pints per adult (with distributional assumptions). The third projection was for two graphs relating to vaccine coverage and effectiveness.
 
 ## Packages
 I have used the following packages:
@@ -12,3 +12,4 @@ I have used the following packages:
 There are also R Markdown pages to view:
 - One hundred thousand: https://rpubs.com/anthonybmasters/one-hundred-thousand
 - Pub industry losses: https://rpubs.com/anthonybmasters/pub-industry-turnover-losses
+- Vaccine effectiveness: https://rpubs.com/anthonybmasters/vaccine-effectiveness
