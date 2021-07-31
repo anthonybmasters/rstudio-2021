@@ -69,7 +69,7 @@ nhs_beds_tidy_df <- nhs_covid_beds_df %>%
                values_to = "count")
 
 # Create the graphs
-# The left-hand graph shows total Covid-19 beds by primary admission reason
+# The left-hand graph shows total Covid-19 beds by primary diagnosis reason
 nhs_covid_beds_gg1 <- nhs_beds_tidy_df %>%
   ggplot(aes(x = date, y = count, group = measures)) +
   geom_col(aes(fill = measures),
@@ -82,12 +82,12 @@ nhs_covid_beds_gg1 <- nhs_beds_tidy_df %>%
            label = "Primarily Covid-19", hjust = 0,
            size = 7, fontface = "bold", colour = "#008080") +
   annotate("text", x = as_date("2021-06-21"), y = 3000,
-           label = "Other primary reason", hjust = 0,
+           label = "Other primary diagnosis", hjust = 0,
            size = 7, fontface = "bold", colour = "#800000") +
   theme(legend.position = "none",
         plot.subtitle = element_text(size = 20, face = "bold")) +
   scale_fill_manual(values = c("#008080", "#800000")) +
-  labs(subtitle = "Total beds occupied by confirmed Covid-19\npatients, by primary admission reason",
+  labs(subtitle = "Total beds occupied by confirmed Covid-19\npatients, by primary diagnosis",
        x = "Date",
        y = "")
 
@@ -108,7 +108,7 @@ nhs_covid_beds_gg2 <- nhs_covid_beds_df %>%
 
 # Using patchwork, we then put these two graphs together
 nhs_covid_beds_gg <- nhs_covid_beds_gg1 + nhs_covid_beds_gg2 +
-  plot_annotation(title = "For most Covid-19 patients in England, the disease is the primary admission reason.",
-                  subtitle = str_wrap("Total beds occupied in NHS England by patients with a positive SARS-CoV-2 test (less than 14 days before admission or after admission). This is split by the primary cause of admission on a best endeavours basis.",
-                                      width = 110),
+  plot_annotation(title = "For most Covid-19 patients in England, the disease is the primary diagnosis.",
+                  subtitle = str_wrap("Total beds occupied in NHS England (acute providers only) by patients with a positive SARS-CoV-2 test (less than 14 days before admission or after admission). This is split by primary diagnosis on a best endeavours basis.",
+                                      width = 115),
                   caption = "Source: NHS England Covid-19 Hospital Activity: Primary Diagnosis Supplement, 29 July 2021.")
