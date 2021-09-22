@@ -161,12 +161,12 @@ nhse_vaccine_1st_gg <- nhs_vaccine_df %>%
             colour = "white", size = 5) +
   geom_text(data = nhse_1stdose_alladults_df,
             aes(x = vaxprop_ons, y = age_group),
-            nudge_x = 0.02, label = "ONS",
-            fontface = "bold", size = 5, colour = "#008080") +
+            nudge_x = 0.01, label = "ONS", hjust = 0,
+            fontface = "bold", size = 7, colour = "#008080") +
   geom_text(data = nhse_1stdose_alladults_df,
             aes(x = vaxprop_nims, y = age_group),
-            nudge_x = -0.02, label = "NIMS",
-            fontface = "bold", size = 5, colour = "#800000") +
+            nudge_x = -0.01, label = "NIMS", hjust = 1,
+            fontface = "bold", size = 7, colour = "#800000") +
   scale_x_continuous(label = scales::percent_format(accuracy = 1),
                      limits = c(0.6, 1.01), expand = c(0,0)) +
   labs(title = "Using different population estimates leads to different vaccine coverage statistics.",
