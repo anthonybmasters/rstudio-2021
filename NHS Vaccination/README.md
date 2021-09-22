@@ -1,6 +1,7 @@
 ## Purpose
 The purpose of this R code is to process the NHS vaccination data, principally for England.
 The first project looks at wrangling data out of the weekly online spreadsheet, to produce a vaccine coverage graph by different age groups and denominators.
+The second code produces a graph comparing population statistics and a different graph of vaccine coverage.
 
 ## R Packages
 I use the following R packages:
@@ -11,3 +12,4 @@ I use the following R packages:
 ## R Markdown
 There are R Markdown pages to view:
 - Data wrangling (3rd July 2021): https://rpubs.com/anthonybmasters/nhs-vaccination-data-wrangling
+- Data wrangling II (20th September 2021): https://rpubs.com/anthonybmasters/nhs-england-data-wrangling
