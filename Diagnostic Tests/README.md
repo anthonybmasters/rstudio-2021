@@ -1,6 +1,7 @@
 ## Purpose
 The purpose of this R code is create graphs and analyses relating to diagnostic tests. The list of tasks may expand:
 1. A stochastic view of diagnostic tests: simulation precision and negative predictive values
+2. A graph showing pre-test and post-test probabilities for conflicting results
 
 ## Packages
 I have used the following packages:
@@ -12,3 +13,4 @@ I have used the following packages:
 ## R Markdown
 There are also R Markdown pages to view:
 1. A stochastic view of diagnostic tests: https://rpubs.com/anthonybmasters/diagnostic-testing-stochastic
+2. Rapid and confirmatory tests: https://rpubs.com/anthonybmasters/rapid-and-confirmatory-tests
