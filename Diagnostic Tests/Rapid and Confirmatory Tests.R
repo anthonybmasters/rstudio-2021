@@ -85,6 +85,6 @@ test_results_gg <- test_tidy_df %>%
            hjust = 0, fontface = "bold") +
   labs(title = str_wrap("With prevalence at 2.5%, a rapid positive test followed by a confirmatory negative test means you are more likely than not to have the virus.", 80),
        subtitle = "Pre-test (tested population prevalence) and post-test probabilities of infection for different test results.",
-       x = "Pre-test probability (tested population prevalance)",
+       x = "Pre-test probability (tested population prevalence)",
        y = "Post-test probability",
        caption = str_wrap("Assumptions: the rapid test has a false-negative rate of 20% and a false-positive rate of 0.1%. The confirmatory test has a false-negative rate of 5% and a false-positive rate of 0.005%.", width = 100))
