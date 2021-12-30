@@ -1,6 +1,6 @@
 ## Purpose
 The purpose of this R code is create miscellaneous data visualisations.
-The first project relates to the odds of one in 10,000 and one in 100,000. The second project was simulating UK pub industry losses in terms of beer pints per adult (with distributional assumptions). The third project was for two graphs relating to vaccine coverage and effectiveness. The fourth project is for a graph of expected deaths in a synthetic cohort by age, sex, and nation in the UK (2017-19). The fifth project is for a graph showing revised English vaccine coverage estimates. The sixth project shows NHS England Covid-19 patients by primary diagnosis. The seventh project looked at vaccine wastage in Wales. The eight project also shows NHS England Covid-19 partients by primary diagnosis, for London.
+The first project relates to the odds of one in 10,000 and one in 100,000. The second project was simulating UK pub industry losses in terms of beer pints per adult (with distributional assumptions). The third project was for two graphs relating to vaccine coverage and effectiveness. The fourth project is for a graph of expected deaths in a synthetic cohort by age, sex, and nation in the UK (2017-19). The fifth project is for a graph showing revised English vaccine coverage estimates. The sixth project shows NHS England Covid-19 patients by primary diagnosis. The seventh project looked at vaccine wastage in Wales. The eight project also shows NHS England Covid-19 partients by primary diagnosis, for London. The ninth project produces a graph showing confirmed cases by test type in Engand.
 
 ## Packages
 I have used the following packages:
@@ -21,3 +21,4 @@ There are also R Markdown pages to view:
 - NHS England Covid hospital beds: https://rpubs.com/anthonybmasters/nhs-england-covid-hospital-beds
 - StatsWales Vaccines unsuitable for use: https://rpubs.com/anthonybmasters/statswales-vaccine-unsuitable
 - NHS England Covid hospital beds (in London): https://rpubs.com/anthonybmasters/nhs-england-covid-beds-london
+- Confirmed cases in England by test type: https://rpubs.com/anthonybmasters/confirmed-cases-england-test-type
